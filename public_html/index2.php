@@ -1,0 +1,209 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is not logged in
+if (!isset($_SESSION["user_id"])) {
+    // Redirect to the login page
+    header("Location: index.html");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLog</title>
+   
+    <link rel="icon" href="./images/tab.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./css/css_index2.css">
+    <script src="./javascript/script.js" defer></script>
+    
+</head>
+<body>
+
+    <div class="logo">
+    <center><img src="./images/wd.png" alt="WanderLog"> </center> 
+    <?php 
+    echo '<center><ul><span class="welcome-message">Welcome, ' . $_SESSION["user_name"] . '!</span></ul></center>';
+    ?>
+    <br>
+
+    </div>
+    <div class="navbar">
+        <span class="menu-btn material-symbols-outlined">menu</span>
+        <nav> 
+            <ul class="links">
+                
+                <span class="close-btn material-symbols-outlined">close</span>
+                 <li> <a href="index2.php">Home</a></li>
+                 <li> <a href="ToursAndTravel.php">Tours and Travels</a></li>
+                 <li> <a href="Post.php">Journal</a></li>
+                 <li> <a href="about.php">About</a></li>
+                 <?php
+                 echo '<li><a href="logout.php">Logout</a></li>';
+                 ?>
+            </ul>
+       </nav>
+
+
+
+    </div>
+ <!-- Popup Form -->
+    
+
+ <!-- Picture Cards -->
+ <div class="wrapper">
+     <div class="container">
+         <input type="radio" name="slide" id="card1" checked>
+             <label for="card1" class="card">
+                 <div class="row">
+                     <div class="icon">1</div>
+                     <div class="description">
+                         <h4> Calle Crisologo, Vigan</h4>
+                         <p>Travel back in time as you stroll along the streets of Calle Crisologo in Vigan as part of your Ilocos itinerary. </p>
+                     </div>
+                 </div>
+             </label>
+
+             <input type="radio" name="slide" id="card2" checked>
+             <label for="card2" class="card">
+                 <div class="row">
+                     <div class="icon">2</div>
+
+                     <div class="description">
+                         <h4>Tubbataha Reef, Palawan</h4>
+                         <p> Located at the heart of the Sulu Sea, it is considered a center of marine biodiversity.</p>
+                     </div>
+                 </div>
+             </label>
+
+             <input type="radio" name="slide" id="card3" checked>
+             <label for="card3" class="card">
+                 <div class="row">
+                     <div class="icon">3</div>
+                     <div class="description">
+                         <h4>Kayangan Lake, Coron, Palawan </h4>
+                         <p>Going on a Kayangan Lake Coron tour will allow you to see its lagoon that is a dreamy mix of blues.</p>
+                     </div>
+                 </div>
+             </label>
+
+             <input type="radio" name="slide" id="card4" checked>
+             <label for="card4" class="card">
+                 <div class="row">
+                     <div class="icon">4</div>
+                     <div class="description">
+                         <h4>Banaue Rice Terraces, Ifugao</h4>
+                         <p>Sit in a colorful jeepney as it cruises along winding roads in Banaue.</p>
+                     </div>
+                 </div>
+             </label>
+     </div>
+ </div>
+     
+        
+ <!-- Footer -->
+
+ <footer class="footer">
+     <div class="footer__addr">
+       <h1 class="footer__logo"> <img src="./images/wd.png"></h1>
+   
+       <h2>Contact</h2>
+   
+       <address>
+         Rosary Heights II, Cotabato City, Philippines<br>
+   
+         <a class="footer__btn" href="mailto:2120585@ub.edu.ph">Email Us</a>
+       </address>
+     </div>
+   
+     <ul class="footer__nav">
+       <li class="nav__item">
+         <h2 class="nav__title">Rewards</h2>
+   
+         <ul class="nav__ul">
+           <li>
+             <a href="#">Join Now</a>
+           </li>
+   
+           <li>
+             <a href="#">Learn More</a>
+           </li>
+   
+           <li>
+             <a href="#">Manage Account</a>
+           </li>
+         </ul>
+       </li>
+   
+       <li class="nav__item">
+         <h2 class="nav__title">News & Info</h2>
+   
+         <ul class="nav__ul">
+           <li>
+             <a href="#">Press Releases</a>
+           </li>
+   
+           <li>
+             <a href="#">About Our Products</a>
+           </li>
+   
+           <li>
+             <a href="#">Product Support</a>
+           </li>
+   
+           <li>
+             <a href="#">Product Manuals</a>
+           </li>
+   
+           <li>
+             <a href="#">Product Registration</a>
+           </li>
+   
+           <li>
+             <a href="#">Newsletter Sign Up</a>
+           </li>
+         </ul>
+       </li>
+   
+       <li class="nav__item">
+         <h2 class="nav__title">Support</h2>
+   
+         <ul class="nav__ul">
+           <li>
+             <a href="#">FAQ</a>
+           </li>
+   
+           <li>
+             <a href="#">Help Desk</a>
+           </li>
+   
+           <li>
+             <a href="#">Forums</a>
+           </li>
+         </ul>
+       </li>
+     </ul>
+   
+     
+   </footer>
+
+
+
+
+
+
+
+
+
+ <div></div>
+ <div></div>
+</body>
+</html>
